@@ -22,9 +22,11 @@ def transform_date(date_str):
 
 
 for contents in reader():
-	date, name, webpage = contents
+	date, name, url = contents
 	date = transform_date(date)
-	
+
+
+
 
 	pass
 
