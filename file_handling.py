@@ -40,13 +40,8 @@ def build_user_data(filename):
     for row in reader(filename):
         date, user, url = row
         date = transform_date(date)
-        
 
-        accumulator.append(tuplename(user,date,url))
-
-
-
-
+        accumulator.append(tuplename(user, date, url))
 
     return accumulator
 
@@ -55,7 +50,6 @@ def sort(accumulator):
     #sort the rows in the accumulator by date
 
     #sort_by_date = sorted(accumulator, key=lambda date: date)
-
 
     sort_by_user = sorted(accumulator, key=itemgetter(0))
     print(sort_by_user)
