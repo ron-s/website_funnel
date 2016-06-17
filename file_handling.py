@@ -29,7 +29,8 @@ def transform_date(date_str):
 
 
 def build_user_data(filename):
-    #define content in the rows and gather all associated data for each user into a list of dictionaries
+    #define the content in the tabbed delimited rows,
+    #and gather all associated data for each user into a list of dictionaries
     accumulator = []
 
     for row in reader(filename):
@@ -42,6 +43,9 @@ def build_user_data(filename):
     return accumulator
 
 
+def sort(accumulator):
+    #sort the rows returned from the accumulator into user sessions
+    accumulator.sort
 
 
 
