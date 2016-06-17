@@ -6,6 +6,7 @@ from collections import namedtuple
 
 
 
+
 def reader(filename):
     #read tab-delimited file
     with open(filename, 'r') as filein:
@@ -53,8 +54,9 @@ def sort(accumulator):
     sort_by_user = sorted(accumulator, key=itemgetter(0))
     print(sort_by_user)
 
-    #now sort by date
-
+    #sort by date
+    #print(sort_by_user(sorted(accumulator, key=attrgetter("date"))))
+    print(sorted(accumulator, key=lambda username: username.date))
 
 
 
