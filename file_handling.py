@@ -59,9 +59,9 @@ def sort_tuple(accumulator):
 def sort_by_session(accumulator):
     #determine time deltas between timestamps to determine sessions
 
+    #split the list created in sort_by_user
     for items in sort_by_user:
-        
-
+        username.split(date)
 
 
 
