@@ -47,17 +47,20 @@ def build_user_data(filename):
     return accumulator
 
 
-def sort(accumulator):
+def sort_tuple(accumulator):
     #sort the rows in the accumulator by date
 
-    #start by sorting the named tuples by user
-    sort_by_user = sorted(accumulator, key=itemgetter(0))
-    print(sort_by_user)
+    #namedtuple sorts by user then date then url
+    sort_by_user = sorted(accumulator)
+    return sort_by_user
+    #print(sort_by_user)
 
-    #sort by date
-    #print(sort_by_user(sorted(accumulator, key=attrgetter("date"))))
-    print(sorted(accumulator, key=lambda username: username.date))
 
+def sort_by_session(accumulator):
+    #determine time deltas between timestamps to determine sessions
+
+    for items in sort_by_user:
+        
 
 
 
