@@ -1,6 +1,8 @@
 import csv
 from datetime import datetime
+from operator import itemgetter
 import json
+from collections import namedtuple
 
 
 
@@ -30,22 +32,34 @@ def transform_date(date_str):
 
 def build_user_data(filename):
     #define the content in the tabbed delimited rows,
-    #and gather all associated data for each user into a list of dictionaries
+    #and gather all associated data for each user into a dictionary
     accumulator = []
+    #instatiating a named tuple
+    tuplename = namedtuple("username", ["user", "date", "url"])
 
     for row in reader(filename):
         date, user, url = row
         date = transform_date(date)
+        
 
-        userdata = {"user": user, "date": date, "url": url}
-        accumulator.append(userdata)
+        accumulator.append(tuplename(user,date,url))
+
+
+
+
 
     return accumulator
 
 
 def sort(accumulator):
-    #sort the rows returned from the accumulator into user sessions
-    accumulator.sort
+    #sort the rows in the accumulator by date
+
+    #sort_by_date = sorted(accumulator, key=lambda date: date)
+
+
+    sort_by_user = sorted(accumulator, key=itemgetter(0))
+    print(sort_by_user)
+
 
 
 
