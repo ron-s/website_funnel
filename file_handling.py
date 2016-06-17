@@ -49,7 +49,7 @@ def build_user_data(filename):
 def sort(accumulator):
     #sort the rows in the accumulator by date
 
-    #start by sorting the rows by user
+    #start by sorting the named tuples by user
     sort_by_user = sorted(accumulator, key=itemgetter(0))
     print(sort_by_user)
 
