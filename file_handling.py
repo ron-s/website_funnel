@@ -49,10 +49,13 @@ def build_user_data(filename):
 def sort(accumulator):
     #sort the rows in the accumulator by date
 
-    #sort_by_date = sorted(accumulator, key=lambda date: date)
-
+    #start by sorting the rows by user
     sort_by_user = sorted(accumulator, key=itemgetter(0))
     print(sort_by_user)
+
+    #now sort by date
+
+
 
 
 
