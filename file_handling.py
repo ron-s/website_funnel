@@ -24,7 +24,8 @@ def write():
 
 
 def transform_date(date_str):
-    # do operation
+    """convert weblog datetime to unix datetime"""
+    
     #date_str = '1/1/2012 5:21:30 AM'
     datetime_object = datetime.strptime(date_str, "%m/%d/%Y %I:%M:%S %p")
 
@@ -32,8 +33,9 @@ def transform_date(date_str):
 
 
 def build_user_data(filename):
-    #define the content in the tabbed delimited rows,
-    #and gather all associated data for each user into a dictionary
+    """define the content in the tabbed delimited rows, 
+    and gather all associated data for each user into a dictionary"""
+
     accumulator = []
     #instatiating a named tuple
     tuplename = namedtuple("username", ["user", "date", "url"])
@@ -41,25 +43,24 @@ def build_user_data(filename):
     for row in reader(filename):
         date, user, url = row
         date = transform_date(date)
-
         accumulator.append(tuplename(user, date, url))
 
     return accumulator
 
 
 def sort_tuple(accumulator):
-    #sort the rows in the accumulator by date
+    """sort the rows in the accumulator by date"""
 
     #namedtuple sorts by user then date then url
     sort_by_user = sorted(accumulator)
     return sort_by_user
-    #print(sort_by_user)
+    print(sort_by_user)
 
 
 def sort_by_session(accumulator):
-    #determine time deltas between timestamps to determine sessions
+    """determine time deltas between timestamps to determine user sessions"""
 
-    #split the list created in sort_by_user
+    #split the list created by sort_by_user
     for items in sort_by_user:
         username.split(date)
 
