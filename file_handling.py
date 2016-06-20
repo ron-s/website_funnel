@@ -5,8 +5,6 @@ import json
 from collections import namedtuple
 
 
-
-
 def reader(filename):
     #read tab-delimited file
     with open(filename, 'r') as filein:
@@ -25,7 +23,7 @@ def write():
 
 def transform_date(date_str):
     """convert weblog datetime to unix datetime"""
-    
+
     #date_str = '1/1/2012 5:21:30 AM'
     datetime_object = datetime.strptime(date_str, "%m/%d/%Y %I:%M:%S %p")
 
@@ -33,7 +31,7 @@ def transform_date(date_str):
 
 
 def build_user_data(filename):
-    """define the content in the tabbed delimited rows, 
+    """define the content in the tabbed delimited rows,
     and gather all associated data for each user into a dictionary"""
 
     accumulator = []
