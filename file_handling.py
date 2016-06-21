@@ -52,7 +52,7 @@ def sort_tuple(accumulator):
     #namedtuple sorts by user then date then url
     sort_by_user = sorted(accumulator)
     return sort_by_user
-    print(sort_by_user)
+    #print(sort_by_user)
 
 
 def sort_by_session(accumulator):
@@ -63,6 +63,7 @@ def sort_by_session(accumulator):
         username.split(date)
 
 
+sort_tuple(build_user_data("filein.txt"))
 
 
 # # write comma-delimited file (comma is the default delimiter)
