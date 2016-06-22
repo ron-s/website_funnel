@@ -41,7 +41,9 @@ for k, v in data_dict.items():
     for i in range(len(v) - 1):
         time = i[x].date - i[x]+1.date
 
-        if time <= datetime.delta(0, 0, 0, 0, 20)
+        x += 1
+
+        if time <= datetime.delta(0, 0, 0, 0, 20):
         #if the difference between the timestamps is 20min or less then it belongs to the same session
             newlst.add(i[x])
             newlst.add(i[x + 1])
