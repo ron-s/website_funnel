@@ -63,7 +63,13 @@ def sort_by_session(accumulator):
         username.split(date)
 
 
-sort_tuple(build_user_data("filein.txt"))
+
+reader("./filein.txt")
+
+sort_tuple(build_user_data())
+print()
+#print(accumulator)
+#print(sort_by_user)
 
 
 # # write comma-delimited file (comma is the default delimiter)
