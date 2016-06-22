@@ -3,6 +3,8 @@ from datetime import datetime
 
 
 class Row:
+    """create a class from the properties of a row in a tab delimited log file"""
+
     def __init__(self):
         user = "user"
         date = "date"
@@ -10,6 +12,7 @@ class Row:
 
 
 def reader(filename):
+    """open and read a tabbed delimited file"""
     #read tab-delimited file
     with open(filename, 'r') as filein:
         reader = csv.reader(filein, delimiter='\t')
@@ -22,7 +25,7 @@ data_dict = {}
 R = [reader(filename)]
 
 for i in R:
-    #iterate through the tabbed delimited file to determine the users
+    #iterate through the tabbed delimited file to sort the objects by user and add them to a dict
     if not in data_dict:
         #if the user doesn't exist in the dict
         data_dict[i.user] = i
