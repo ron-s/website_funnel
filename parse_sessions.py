@@ -16,10 +16,13 @@ with open("./filein.txt", 'r') as filein:
 
         rows.append({'date': date, 'user': user, 'url': url})
 
-
-
 print(rows)
 
+#create a new list to append all sessions
+sessions = []
+
+for row in rows
+    if 
 
 
 
