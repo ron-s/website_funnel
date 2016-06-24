@@ -1,5 +1,5 @@
-import csv
-from datetime import datetime
+#import csv
+#from datetime import datetime
 
 
 
@@ -21,16 +21,32 @@ print(rows)
 #create a new list to append all sessions
 sessions = []
 
-while row = rows.pop():
-    #remove the item parsed from the list after being iterated
 
-    for session in sessions:
-        #if a session for the user already exists then append URL and Date to the pages list for that session
-        if session.user in sessions
-        sessions[session.user].append('pages': [row.date, row.url])
+while True:
+
+    if len(rows) > 0:
+        row = rows.pop()
+        print(row)
+
+        #remove the item parsed from the rows list after being iterated
+
+        for session in sessions:
+            #if a session for the user already exists then append URL and Date to the pages list for that session
+            if row['user'] == session['user']:
+                session['pages'].append({'date': row['date'], 'url': row['url']})
+                break
+        else:
+            #create a new session with user's information
+            sessions.append( {'user': row['user'], 'pages': [{'date': row['date'], 'url': row['url']}]})
+
     else:
-        #create a new session with user's information
-        sessions[session.user] = [session]
+        break
+
+
+print(sessions)
+
+
+#datetime.strptime(date_str, "%m/%d/%Y %I:%M:%S %p").timestamp()
 
 
 
