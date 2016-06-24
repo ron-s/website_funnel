@@ -21,8 +21,18 @@ print(rows)
 #create a new list to append all sessions
 sessions = []
 
-for row in rows
-    if 
+while row = rows.pop():
+    #remove the item parsed from the list after being iterated
+
+    for session in sessions:
+        #if a session for the user already exists then append URL and Date to the pages list for that session
+        if session.user in sessions
+        sessions[session.user].append('pages': [row.date, row.url])
+    else:
+        #create a new session with user's information
+        sessions[session.user] = [session]
+
+
 
 
 
