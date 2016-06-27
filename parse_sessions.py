@@ -29,7 +29,6 @@ while True:
         print(row)
 
         #remove the item parsed from the rows list after being iterated
-
         for session in sessions:
             #if a session for the user already exists then append URL and Date to the pages list for that session
             if row['user'] == session['user']:
@@ -46,9 +45,17 @@ while True:
 print(sessions)
 
 
-#datetime.strptime(date_str, "%m/%d/%Y %I:%M:%S %p").timestamp()
+#convert weblog datetime to unix datetime
+#existing datetime string  '1/1/2012 5:21:30 AM'
+#datetime_object = datetime.strptime(date, "%m/%d/%Y %I:%M:%S %p")
 
-
+# for session in sessions:
+#     print(session)
+#     for user in session:
+#         print(user)
+#         for pages in session:
+#             print(pages)
+#             for date in pages
 
 
 
