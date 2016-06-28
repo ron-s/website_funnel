@@ -5,7 +5,7 @@
 
 #convert weblog datetime to unix datetime
 #existing datetime string  '1/1/2012 5:21:30 AM'
-def transform_date(date_str):
+def transform_date(date):
     """convert weblog datetime to unix datetime"""
 
     #date_str = '1/1/2012 5:21:30 AM'
@@ -60,8 +60,10 @@ print(sessions)
 
 
 #parse all sessions for each user by date to determine the time delta between the user's visits
+#for key,value in sessions.items():
+
 for session in sessions:
-    session["pages"]["date"][i+1] - session["pages"]["date"][i]
+    session['pages']['date'][0] - session['pages']['date'][1]
 
 
 
