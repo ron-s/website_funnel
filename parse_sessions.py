@@ -3,6 +3,18 @@
 
 
 
+#convert weblog datetime to unix datetime
+#existing datetime string  '1/1/2012 5:21:30 AM'
+def transform_date(date_str):
+    """convert weblog datetime to unix datetime"""
+
+    #date_str = '1/1/2012 5:21:30 AM'
+    datetime_object = datetime.strptime(date_str, "%m/%d/%Y %I:%M:%S %p")
+
+    return datetime_object
+
+
+
 
 rows = []
 
@@ -45,19 +57,15 @@ while True:
 print(sessions)
 
 
-#convert weblog datetime to unix datetime
-#existing datetime string  '1/1/2012 5:21:30 AM'
-#datetime_object = datetime.strptime(date, "%m/%d/%Y %I:%M:%S %p")
-
-# for session in sessions:
-#     print(session)
-#     for user in session:
-#         print(user)
-#         for pages in session:
-#             print(pages)
-#             for date in pages
 
 
+#parse all sessions for each user by date to determine the time delta between the user's visits
+for session in sessions:
+    session["pages"]["date"][i+1] - session["pages"]["date"][i]
+
+
+
+#for each session that occurs 
 
 
 # class Row:
