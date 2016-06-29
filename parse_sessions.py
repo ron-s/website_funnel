@@ -28,7 +28,7 @@ with open("./filein.txt", 'r') as filein:
 
         rows.append({'date': date, 'user': user, 'url': url})
 
-print(rows)
+#print(rows)
 
 #create a new list to append all sessions
 sessions = []
@@ -38,7 +38,7 @@ while True:
 
     if len(rows) > 0:
         row = rows.pop()
-        print(row)
+        #print(row)
 
         #remove the item parsed from the rows list after being iterated
         for session in sessions:
@@ -54,7 +54,7 @@ while True:
         break
 
 
-print(sessions)
+#print(sessions)
 
 
 
@@ -63,7 +63,8 @@ print(sessions)
 #for key,value in sessions.items():
 
 for session in sessions:
-    session['pages']['date'][0] - session['pages']['date'][1]
+    print(session['pages'])
+
 
 
 
