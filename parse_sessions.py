@@ -1,11 +1,12 @@
 #import csv
-#from datetime import datetime
+from datetime import datetime
+import pdb
 
 
 
 #convert weblog datetime to unix datetime
 #existing datetime string  '1/1/2012 5:21:30 AM'
-def transform_date(date):
+def transform_date(date_str):
     """convert weblog datetime to unix datetime"""
 
     #date_str = '1/1/2012 5:21:30 AM'
@@ -28,10 +29,8 @@ with open("./filein.txt", 'r') as filein:
 
         rows.append({'date': date, 'user': user, 'url': url})
 
-#print(rows)
-
 #create a new list to append all sessions
-sessions = []
+sorted_rows = []
 
 
 while True:
@@ -41,34 +40,54 @@ while True:
         #print(row)
 
         #remove the item parsed from the rows list after being iterated
-        for session in sessions:
+        for session in sorted_rows:
             #if a session for the user already exists then append URL and Date to the pages list for that session
             if row['user'] == session['user']:
                 session['pages'].append({'date': row['date'], 'url': row['url']})
                 break
         else:
             #create a new session with user's information
-            sessions.append( {'user': row['user'], 'pages': [{'date': row['date'], 'url': row['url']}]})
+            sorted_rows.append( {'user': row['user'], 'pages': [{'date': row['date'], 'url': row['url']}]})
 
     else:
         break
 
 
-#print(sessions)
-
-
-
-
 #parse all sessions for each user by date to determine the time delta between the user's visits
 #for key,value in sessions.items():
 
-for session in sessions:
-    print(session['pages'])
+
+
+sessions = []
+
+
+counter = 1
+for user_data in sorted_rows:
+        if counter <= len(sorted_rows):
+            
+            visits = user_data['pages']
+
+            for visit in visits:
+
+                    import pdb; pdb.set_trace()
+                    start = visit[counter - 1]['date']
+                    end = visit[counter]['date']
+                    delta = end - start
+
+                    #1200s in 20minutes
+                    if delta.seconds >= 1200:
+                        sessions.append(user_visit)
+
+                    counter += 1    
+
+            #determine whether time delta is greater than 20min.
+            #if greater than 20min then create a new session
+
+print(sessions)
 
 
 
 
-#for each session that occurs 
 
 
 # class Row:
